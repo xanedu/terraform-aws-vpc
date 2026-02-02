@@ -274,6 +274,12 @@ variable "public_subnet_tags_per_az" {
   default     = {}
 }
 
+variable "public_subnet_direct_tags" {
+  description = "Additional tags for the public subnets that are applied directly to a specific subnet resource"
+  type        = list(map(string))
+  default     = []
+}
+
 variable "public_route_table_tags" {
   description = "Additional tags for the public route tables"
   type        = map(string)
@@ -406,6 +412,12 @@ variable "private_subnet_tags_per_az" {
   description = "Additional tags for the private subnets where the primary key is the AZ"
   type        = map(map(string))
   default     = {}
+}
+
+variable "private_subnet_direct_tags" {
+  description = "Additional tags for the private subnets that are applied directly to a specific subnet resource"
+  type        = list(map(string))
+  default     = []
 }
 
 variable "private_route_table_tags" {
